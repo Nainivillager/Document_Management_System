@@ -61,36 +61,3 @@ const page: React.FC = () => {
 
 export default page;
 
-
-//import { useRouter } from 'next/router';
-// import React from 'react';
-
-// const CompanyOverview: React.FC = () => {
-//   const router = useRouter();
-//   const { companyId } = router.query;
-
-//   return (
-//     <div className="container mx-auto p-4">
-//       <h1 className="text-2xl font-bold mb-4">Company Overview</h1>
-//       <p>Company ID: {companyId}</p>
-//       {/* Add more company details here */}
-//     </div>
-//   );
-// };
-
-// export default CompanyOverview;
-
-
-//import React from 'react';
-// import CompanyTable from '../components/CompanyTable';
-
-// const Home: React.FC = () => {
-//   return (
-//     <div className="container mx-auto p-4">
-//       <h1 className="text-2xl font-bold mb-4">Company List</h1>
-//       <CompanyTable />
-//     </div>
-//   );
-// };
-
-// export default Home;
