@@ -25,9 +25,9 @@ const CompanyTable: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container ml-60 mx-auto p-4">
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white shadow-md rounded-lg">
+        <table className="min-w-[80%] bg-white shadow-md rounded-lg">
           <thead className="bg-gray-50">
             <tr>
               <th className="py-2 px-4 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-600">Company ID</th>
@@ -63,22 +63,3 @@ const CompanyTable: React.FC = () => {
 };
 
 export default CompanyTable;
-
-
-//import { useRouter } from 'next/router';
-// import React from 'react';
-
-// const CompanyDetails: React.FC = () => {
-//   const router = useRouter();
-//   const { companyId } = router.query;
-
-//   return (
-//     <div className="container mx-auto p-4">
-//       <h1 className="text-2xl font-bold mb-4">Company Details</h1>
-//       <p>Company ID: {companyId}</p>
-//       {/* Add more company details here */}
-//     </div>
-//   );
-// };
-
-// export default CompanyDetails;

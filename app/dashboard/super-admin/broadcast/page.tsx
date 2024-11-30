@@ -16,7 +16,10 @@ const page: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white shadow-lg rounded-lg">
+    <div className="container ml-60 mx-auto p-4">
+      <div className="overflow-x-auto">
+        <table className="min-w-[80%] bg-white shadow-md rounded-lg"></table>
+    <div className="max-w-md ml-60  p-4 bg-white shadow-lg rounded-lg">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label
@@ -78,6 +81,10 @@ const page: React.FC = () => {
         </button>
       </form>
     </div>
+    </div>
+    </div>
+
+
   );
 };
 
