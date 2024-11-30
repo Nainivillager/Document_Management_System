@@ -90,7 +90,7 @@ const Sidebar: React.FC = () => {
             <li key={item.path} className="mb-8">
               <Link
                 href={item.path}
-                className={`block px-4 py-2 flex items-center ${linkClasses(
+                className={`px-4 py-2 flex items-center ${linkClasses(
                   item.path
                 )}`}
                 aria-label={`Go to ${item.name}`}
