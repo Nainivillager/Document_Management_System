@@ -63,11 +63,11 @@ const Sidebar: React.FC = () => {
     <div
       className={`h-screen fixed top-0 left-0 flex flex-col pt-16 transition-all duration-300 ease-in-out ${
         isSidebarOpen ? "w-64" : "w-16"
-      } bg-gray-800 text-white md:w-64`}
+      } bg-gray-100 text-black md:w-64`}
     >
       {/* Logo and Toggle Button */}
       <div
-        className="flex items-center justify-between h-16 absolute top-0 w-full bg-gray-700 px-4 cursor-pointer"
+        className="flex items-center justify-between h-16 absolute top-0 w-full  px-4 cursor-pointer"
         onClick={toggleSidebar}
         aria-label="Toggle Sidebar"
       >
@@ -76,7 +76,7 @@ const Sidebar: React.FC = () => {
             !isSidebarOpen && "hidden"
           } md:block`}
         >
-          Logo
+          DMS
         </h1>
         <button className="text-xl md:hidden" aria-expanded={isSidebarOpen}>
           {isSidebarOpen ? <FiChevronLeft /> : <FiMenu />}
