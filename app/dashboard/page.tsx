@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export default function page() {
   return (
-    <div>This is page.tsx </div>
-  )
+    <div className="container mx-auto p-4">
+      <div className="overflow-x-auto"> 
+        
+      </div>
+    </div>
+  );
 }

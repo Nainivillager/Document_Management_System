@@ -28,11 +28,6 @@ const Header: React.FC = () => {
 
   return (
     <header className="flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
-      {/* Logo or Title */}
-      <div className="text-2xl font-semibold">
-        <h1>Logo</h1>
-      </div>
-
       {/* Search Input */}
       <div className="flex-grow flex justify-center">
         <input
