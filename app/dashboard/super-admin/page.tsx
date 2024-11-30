@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div>admin hu mai</div>
+    <div>This is Admin</div>
   )
 }
 
