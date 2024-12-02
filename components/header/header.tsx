@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
+    <header className="flex justify-between items-center p-4  text-black shadow-md">
       {/* Search Input */}
       <div className="flex-grow flex justify-center">
         <input
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       <div className="relative" ref={dropdownRef}>
         <FiUser
           onClick={toggleDropdown}
-          className="text-2xl cursor-pointer hover:text-blue-300 transition-all duration-300 ease-in-out"
+          className="text-xl cursor-pointer hover:text-blue-300 transition-all duration-300 ease-in-out"
         />
         {isDropdownOpen && (
           <div className="absolute right-0 mt-2 w-48  text-black rounded-lg shadow-lg z-10">

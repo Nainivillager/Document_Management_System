@@ -16,7 +16,7 @@ const page: React.FC = () => {
   };
 
   return (
-    <div className="container ml-60 mx-auto p-4">
+    <div className="container mx-auto p-4 bg-gray-100">
       <div className="overflow-x-auto">
         <table className="min-w-[80%] bg-white shadow-md rounded-lg"></table>
     <div className="max-w-md ml-60  p-4 bg-white shadow-lg rounded-lg">
