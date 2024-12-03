@@ -1,38 +1,38 @@
 import React from "react";
-import { TrendingUp } from "lucide-react";
-import {
-  Label,
-  PolarGrid,
-  PolarRadiusAxis,
-  RadialBar,
-  RadialBarChart,
-} from "recharts";
+// import { TrendingUp } from "lucide-react";
+// import {
+//   Label,
+//   PolarGrid,
+//   PolarRadiusAxis,
+//   RadialBar,
+//   RadialBarChart,
+// } from "recharts";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-
-import { ChartConfig, ChartContainer } from "@/components/ui/chart";
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardFooter,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card";
 
 
-const chartConfig = {
-  storage: {
-    label: "storage",
-  },
-  safari: {
-    color: "hsl(var(--chart-2))",
-  },
-} satisfies ChartConfig;
+// import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 
-const chartData = [
-  {  storage: 200, fill: "var(--color-safari)" },
-]
+
+// const chartConfig = {
+//   storage: {
+//     label: "storage",
+//   },
+//   safari: {
+//     color: "hsl(var(--chart-2))",
+//   },
+// } satisfies ChartConfig;
+
+// const chartData = [
+//   {  storage: 200, fill: "var(--color-safari)" },
+// ]
 export default function page() {
   interface Cards {
     heading: string;
@@ -71,15 +71,9 @@ export default function page() {
           </div>{" "}
         </div>
         ))}
-      </div>
-
-
-      
+      </div>     
     <div>
-
-
-
-    <Card className="flex flex-col">
+    {/* <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
         <CardTitle>Radial Chart - Text</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
@@ -120,7 +114,7 @@ export default function page() {
                           y={viewBox.cy}
                           className="fill-foreground text-4xl font-bold"
                         >
-                          {chartData[0].visitors.toLocaleString()}
+                          {chartData[0].storage.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
@@ -138,12 +132,12 @@ export default function page() {
           </RadialBarChart>
         </ChartContainer>
       </CardContent>
-    </Card>
-  
-
-
-
+    </Card> */}
+    <div>
+      <div>Top Storage Users</div>
     </div>
+    </div>
+
 
     </div>
   );
