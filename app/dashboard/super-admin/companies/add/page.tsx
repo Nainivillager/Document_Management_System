@@ -1,136 +1,175 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 
-export default function page() {
-  const [companyData, setCompanyData] = useState({
-    gstNumber: '',
-    companyName: '',
-    email: '',
-    phoneNumber: '',
-    panNumber: '',
-    companyAddress: ''
-  });
+// Define an interface for the company data structure
+interface CompanyData {
+  gstNumber: string;
+  companyName: string;
+  email: string;
+  phoneNumber: string;
+  panNumber: string;
+  companyAddress: string;
+}
 
-  // Function to handle input change
-  const handleInputChange = (e:any) => {
+// Initial state for company data
+const INITIAL_COMPANY_DATA: CompanyData = {
+  gstNumber: '',
+  companyName: '',
+  email: '',
+  phoneNumber: '',
+  panNumber: '',
+  companyAddress: ''
+};
+
+// Validation utility functions
+const validateGSTNumber = (gstNumber: string): boolean => {
+  // Basic GST number validation regex
+  const gstRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+  return gstRegex.test(gstNumber);
+};
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validatePhoneNumber = (phone: string): boolean => {
+  const phoneRegex = /^[6-9]\d{9}$/;
+  return phoneRegex.test(phone);
+};
+
+export default function CompanyRegistrationPage() {
+  const [companyData, setCompanyData] = useState<CompanyData>(INITIAL_COMPANY_DATA);
+  const [errors, setErrors] = useState<Partial<Record<keyof CompanyData, string>>>({});
+
+  // Comprehensive input change handler with validation
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setCompanyData({ ...companyData, [name]: value });
+    setCompanyData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear previous errors for this field
+    setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  // Mock fetch function to simulate auto-filling the data based on GST number
-//   const fetchCompanyData = async (gstNumber) => {
-//     // Simulate an API call
-//     if (gstNumber === '1234567890') {
-//       setCompanyData({
-//         gstNumber,
-//         companyName: 'Example Company',
-//         email: 'contact@example.com',
-//         phoneNumber: '9876543210',
-//         panNumber: 'ABCDE1234F',
-//         companyAddress: '123 Example St, City, State'
-//       });
-//     }
-//   };
+  // Validate form before submission
+  const validateForm = (): boolean => {
+    const newErrors: Partial<Record<keyof CompanyData, string>> = {};
+
+    if (!validateGSTNumber(companyData.gstNumber)) {
+      newErrors.gstNumber = 'Invalid GST Number';
+    }
+
+    if (!companyData.companyName.trim()) {
+      newErrors.companyName = 'Company Name is required';
+    }
+
+    if (!validateEmail(companyData.email)) {
+      newErrors.email = 'Invalid Email Address';
+    }
+
+    if (!validatePhoneNumber(companyData.phoneNumber)) {
+      newErrors.phoneNumber = 'Invalid Phone Number';
+    }
+
+    // Add more validations as needed
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   // Handle form submission
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Process form data
-    console.log('Company Data:', companyData);
+    
+    if (validateForm()) {
+      // Process form data
+      console.log('Company Data:', companyData);
+      // TODO: Add actual submission logic (e.g., API call)
+    }
   };
 
+  // Render input field with error handling
+  const renderInputField = (
+    name: keyof CompanyData, 
+    label: string, 
+    type: string = 'text', 
+    placeholder?: string
+  ) => (
+    <div className="mb-4">
+      <label 
+        htmlFor={name} 
+        className="block text-sm font-medium text-gray-700 mb-1"
+      >
+        {label}
+      </label>
+      <input
+        type={type}
+        id={name}
+        name={name}
+        value={companyData[name]}
+        onChange={handleInputChange}
+        className={`
+          w-full px-3 py-2 border rounded-md shadow-sm 
+          focus:outline-none focus:ring-2 
+          transition-all duration-300 
+          ${errors[name] 
+            ? 'border-red-500 focus:ring-red-500' 
+            : 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500'
+          }
+          sm:text-sm text-base
+        `}
+        placeholder={placeholder}
+      />
+      {errors[name] && (
+        <p className="mt-1 text-sm text-red-600">{errors[name]}</p>
+      )}
+    </div>
+  );
+
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold text-center mb-6">ADD New Company</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="gstNumber" className="block text-sm font-medium text-gray-700">GSTIN Number</label>
-          <input
-            type="text"
-            id="gstNumber"
-            name="gstNumber"
-            value={companyData.gstNumber}
-            onChange={handleInputChange}
-            // onBlur={() => fetchCompanyData(companyData.gstNumber)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter GST number"
-          />
-        </div>
-        
-        <div className="mb-4">
-          <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">Company Name</label>
-          <input
-            type="text"
-            id="companyName"
-            name="companyName"
-            value={companyData.companyName}
-            onChange={handleInputChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter company name"
-          />
-        </div>
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+        <div className="p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 text-gray-800">
+            Register New Company
+          </h2>
+          
+          <form onSubmit={handleSubmit} noValidate className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {renderInputField('gstNumber', 'GSTIN Number', 'text', 'Enter GST number')}
+              {renderInputField('companyName', 'Company Name', 'text', 'Enter company name')}
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {renderInputField('email', 'E-mail', 'email', 'Enter company email')}
+              {renderInputField('phoneNumber', 'Phone Number', 'tel', 'Enter phone number')}
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {renderInputField('panNumber', 'PAN Number', 'text', 'Enter PAN number')}
+              {renderInputField('companyAddress', 'Company Address', 'text', 'Enter company address')}
+            </div>
 
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={companyData.email}
-            onChange={handleInputChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter company email"
-          />
+            <div className="flex justify-center mt-6">
+              <button
+                type="submit"
+                className="
+                  w-full sm:w-auto
+                  px-6 py-2 
+                  bg-indigo-600 text-white 
+                  font-bold rounded-md shadow-md 
+                  hover:bg-indigo-700 
+                  focus:outline-none focus:ring-2 focus:ring-indigo-500
+                  transition-colors duration-300
+                  active:scale-95
+                "
+              >
+                Register Company
+              </button>
+            </div>
+          </form>
         </div>
-
-        <div className="mb-4">
-          <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
-          <input
-            type="text"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={companyData.phoneNumber}
-            onChange={handleInputChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter phone number"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="panNumber" className="block text-sm font-medium text-gray-700">PAN Number</label>
-          <input
-            type="text"
-            id="panNumber"
-            name="panNumber"
-            value={companyData.panNumber}
-            onChange={handleInputChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter PAN number"
-          />
-        </div>
-
-        <div className="mb-6">
-          <label htmlFor="companyAddress" className="block text-sm font-medium text-gray-700">Company Address</label>
-          <input
-            type="text"
-            id="companyAddress"
-            name="companyAddress"
-            value={companyData.companyAddress}
-            onChange={handleInputChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter company address"
-          />
-        </div>
-
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            className="px-6 py-2 bg-indigo-600 text-white font-bold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Add Company
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
