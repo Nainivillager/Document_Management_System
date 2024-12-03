@@ -22,9 +22,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
           transition-all 
           duration-300 
           ease-in-out
-          ml-0 
-          md:ml-20 
-          lg:ml-64  // Adjust based on sidebar width
+          ml-10 
+          md:ml-14 
+          lg:ml-56  // Adjust based on sidebar width
         "
       >
         {/* Header */}

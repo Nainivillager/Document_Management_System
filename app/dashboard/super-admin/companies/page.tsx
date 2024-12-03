@@ -39,7 +39,7 @@ const page: React.FC = () => {
   };
 
   return (
-    <div className=" p-4 ra bg-gray-100">
+    <div className=" p-4 bg-gray-100">
       <div className="overflow-x-auto">
         <table className=" bg-white shadow-md rounded-lg">
           <thead className="bg-gray-50">
