@@ -69,7 +69,7 @@ const Sidebar: React.FC = () => {
       className={`
         fixed top-0 left-0 h-screen bg-white shadow-lg 
         transition-all duration-500 ease-in-out
-        flex flex-col border-r border-gray-100
+        flex flex-col border-r border-gray-100 z-10
         ${isSidebarOpen ? 'w-56' : 'w-16'}
       `}
     >
@@ -79,10 +79,10 @@ const Sidebar: React.FC = () => {
           flex items-center justify-center 
           h-16 px-4 py-2 
           border-b border-gray-100
-          relative
+          relative 
         "
       >
-        <div className="flex items-center justify-center flex-1">
+        <div className="flex items-center justify-center flex-1 ">
           {isSidebarOpen && (
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -107,7 +107,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto py-4">
+      <nav className="flex-1 overflow-y-auto py-4 ">
         <ul>
           {sidebarItems.map((item) => (
             <li key={item.path} className="mb-2 px-2">

@@ -164,7 +164,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
     <div>
       <div className="text-base font-semibold text-gray-800 mb-2">{heading}</div>
       <div className="flex justify-between items-center">
-        <div className={`font-bold ${heading === "Total Users" ? "text-2xl" : "text-3xl"} text-gray-900`}>
+        <div className={`font-bold ${heading === "Total Users" ? "text-xl" : "text-2xl"} text-gray-900`}>
           {users}
         </div>
         <div 
@@ -193,7 +193,7 @@ const Dashboard = () => {
     <div className="min-w-full px-4 md:px-6 bg-gray-50 py-8">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">
             Performance Dashboard
           </h1>
           <p className="text-gray-500">
@@ -201,7 +201,7 @@ const Dashboard = () => {
             </p>
         </div>
         
-        <div className="grid gap-6">
+        <div className="flex flex-col md:flex-row md:justify-around gap-6 z-0">
           {Header.map((val) => (
             <DashboardCard 
               key={val.heading}
