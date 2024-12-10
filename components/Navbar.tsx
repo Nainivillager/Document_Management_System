@@ -25,7 +25,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Auth Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="md:flex items-center space-x-4">
           <Link href="/auth/signin">
             <button className="bg-white text-black px-3 py-1 rounded hover:bg-gray-500">
               Register

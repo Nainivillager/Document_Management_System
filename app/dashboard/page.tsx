@@ -190,7 +190,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
 
 const Dashboard = () => {
   return (
-    <div className="min-w-full px-4 md:px-6 bg-gray-50 py-8">
+    <div className="min-w-full px-4 md:px-6 bg-gradient-to-r from-blue-50 to-white py-8">
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-gray-800 mb-2">
@@ -201,7 +201,7 @@ const Dashboard = () => {
             </p>
         </div>
         
-        <div className="flex flex-col md:flex-row md:justify-around gap-6 z-0">
+        <div className="flex flex-col md:flex-row md:justify-around gap-6 z-0 lg:w-full">
           {Header.map((val) => (
             <DashboardCard 
               key={val.heading}

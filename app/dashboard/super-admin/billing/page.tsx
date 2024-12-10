@@ -25,9 +25,9 @@ const CompanyTable: React.FC = () => {
   };
 
   return (
-    <div className=" mx-auto p-4 bg-gray-100 ">
-      <div className="overflow-x-auto">
-        <table className=" bg-white shadow-md rounded-lg">
+    <div className=" p-6 bg-gradient-to-r from-blue-50 to-white min-w-content min-h-screen ">
+      <div className="flex justify-between items-center mb-6">
+        <table className=" bg-white shadow-md rounded-lg w-full">
           <thead className="bg-gray-50">
             <tr>
               <th className="py-2 px-4 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-600">Company ID</th>

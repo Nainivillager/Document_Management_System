@@ -68,7 +68,7 @@ const CompanyBroadcastPage: React.FC = () => {
     const error = errors[id as keyof typeof errors];
 
     return (
-      <div className="mb-4">
+      <div className="mb-4 ">
         <label 
           htmlFor={id} 
           className="flex items-center text-sm font-medium text-gray-700 mb-2"
@@ -145,7 +145,7 @@ const CompanyBroadcastPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-4 bg-gray-50 min-h-screen flex items-center justify-center">
+    <div className="container mx-auto px-4 py-4  min-h-screen bg-gradient-to-r from-blue-50 to-white flex items-center justify-center">
       <div className="w-full max-w-xl bg-white shadow-xl rounded-xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-4">
