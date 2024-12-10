@@ -1,68 +1,3 @@
-// import React from "react";
-
-// export default function page() {
-//   interface Cards {
-//     heading: string;
-//     users: number;
-//     growth: string;
-//   }
-//   const Header: Cards[] = [
-//     {
-//       heading: "Total Companies",
-//       users: 118,
-//       growth: "2.5%",
-//     },
-//     {
-//       heading: "New Users(Monthly)",
-//       users: 8,
-//       growth: "-1.2%",
-//     },
-//     {
-//       heading: "Active Users",
-//       users: 98,
-//       growth: "+11%",
-//     },
-
-//   ];
-//   return (
-//     // <div className="min-w-full px-4 md:px-0 bg-gray-100">
-//     //   <div className="overflow-x-auto flex justify-center mb-4">Dashboard</div>
-//     //   <div className="flex flex-column md:flex-row justify-between ">
-//     //     {Header.map((val) =>(
-//     //       <div className="border px-4 rounded-lg bg-white font-light">
-//     //       {" "}
-//     //       <div>{val.heading}</div>
-//     //       <div className="flex  justify-between">
-//     //         <div>{val.users}</div>
-//     //         <div className="border rounded-xl">{val.growth}</div>
-//     //       </div>{" "}
-//     //     </div>
-//     //     ))}
-//     //   </div>
-//     <div className="min-w-full px-4 md:px-0 bg-gray-100 py-6">
-//   <div className="overflow-x-auto flex justify-center mb-6 text-2xl font-semibold text-gray-700">
-//     Dashboard
-//   </div>
-//   <div className="flex flex-col md:flex-row gap-4 justify-between">
-//     {Header.map((val) => (
-//       <div
-//         key={val.heading}
-//         className="border px-6 py-4 rounded-lg bg-white font-light shadow-md hover:shadow-lg transition-shadow duration-300"
-//       >
-//         <div className="text-lg font-medium text-gray-800 mb-2">{val.heading}</div>
-//         <div className="flex justify-between items-center">
-//           <div className="text-gray-600 text-sm">{val.users}</div>
-//           <div className="border rounded-xl px-3 py-1 text-sm text-green-600 bg-green-100">
-//             {val.growth}
-//           </div>
-//         </div>
-//       </div>
-//     ))}
-//   </div>
-// </div>
-
-//   );
-// }
 "use client";
 
 import React from "react";
@@ -121,7 +56,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
       border 
       px-4 
       py-4 
-      lg: min-w-[33%]
+      lg: min-w-[31%]
       rounded-2xl 
       hover:scale-105 
       transform 

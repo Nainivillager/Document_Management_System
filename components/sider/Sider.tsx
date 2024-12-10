@@ -69,7 +69,7 @@ const Sidebar: React.FC = () => {
       className={`
         fixed top-0 left-0 h-screen bg-white shadow-lg 
         transition-all duration-500 ease-in-out
-        flex flex-col border-r border-gray-100 z-10
+        flex flex-col border-r border-gray-100 z-10 
         ${isSidebarOpen ? 'w-56' : 'w-16'}
       `}
     >
@@ -99,6 +99,7 @@ const Sidebar: React.FC = () => {
             hover:bg-gray-100 
             transition-colors 
             duration-300
+            lg: hidden
             absolute right-2
           "
         >
