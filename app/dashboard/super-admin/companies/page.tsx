@@ -35,7 +35,8 @@ const page: React.FC = () => {
   const router = useRouter();
 
   const handleOverviewClick = (companyId: string) => {
-    router.push(`/companies/${companyId}/overview`);
+    // router.push(`/companies/${companyId}/overview`);
+    router.push(`./companies/overview`)
   };
 
   const handleAddCompanyClick = () => {
