@@ -60,12 +60,12 @@ const page: React.FC = () => {
       ) : (
         <div>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-800">
+            <h2 className="text-xl font-semibold text-gray-800">
               Company List
             </h2>
             <button
               onClick={handleAddCompanyClick}
-              className="bg-green-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-green-700 transition duration-300"
+              className="bg-green-600 text-white py-1 px-5 rounded-lg shadow-md hover:bg-green-700 transition duration-300"
             >
               Add New Company
             </button>
@@ -74,10 +74,10 @@ const page: React.FC = () => {
             <table className="min-w-full table-auto">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-600">
+                  <th className="py-2 px-4 text-left text-sm font-medium text-gray-600">
                     Company ID
                   </th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-600">
+                  <th className="py-1 px-4 text-left text-sm font-medium text-gray-600">
                     Company Name
                   </th>
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-600">
