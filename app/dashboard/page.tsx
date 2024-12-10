@@ -22,7 +22,7 @@
 //       users: 98,
 //       growth: "+11%",
 //     },
-  
+
 //   ];
 //   return (
 //     // <div className="min-w-full px-4 md:px-0 bg-gray-100">
@@ -45,8 +45,8 @@
 //   </div>
 //   <div className="flex flex-col md:flex-row gap-4 justify-between">
 //     {Header.map((val) => (
-//       <div 
-//         key={val.heading} 
+//       <div
+//         key={val.heading}
 //         className="border px-6 py-4 rounded-lg bg-white font-light shadow-md hover:shadow-lg transition-shadow duration-300"
 //       >
 //         <div className="text-lg font-medium text-gray-800 mb-2">{val.heading}</div>
@@ -61,24 +61,13 @@
 //   </div>
 // </div>
 
-
-
-      
-   
-
-
-
- 
-
-
 //   );
 // }
-'use client';
+"use client";
 
-import React from 'react';
-import { TrendingUp, Users, Activity } from 'lucide-react';
-import { Storageadmin } from '@/components/storageadmin';
-
+import React from "react";
+import { TrendingUp, Users, Activity } from "lucide-react";
+import { Storageadmin } from "@/components/storageadmin";
 
 const Header = [
   {
@@ -97,7 +86,7 @@ const Header = [
     icon: Activity,
     bgColor: "bg-green-50",
     iconColor: "text-green-500",
-    size: "md:col-span-2" // This will make this card larger
+    size: "md:col-span-2", // This will make this card larger
   },
   {
     heading: "Growth Rate",
@@ -106,8 +95,8 @@ const Header = [
     icon: TrendingUp,
     bgColor: "bg-purple-50",
     iconColor: "text-purple-500",
-    size: "md:col-span-2" // This will make this card larger
-  }
+    size: "md:col-span-2", // This will make this card larger
+  },
 ];
 interface DashboardCardProps {
   heading: string;
@@ -117,21 +106,22 @@ interface DashboardCardProps {
   bgColor: string;
   iconColor: string;
 }
-const DashboardCard: React.FC<DashboardCardProps> = ({ 
-  heading, 
-  users, 
-  growth, 
-  icon: Icon, 
-  bgColor, 
-  iconColor 
-})  => (
-  <div 
+const DashboardCard: React.FC<DashboardCardProps> = ({
+  heading,
+  users,
+  growth,
+  icon: Icon,
+  bgColor,
+  iconColor,
+}) => (
+  <div
     className={`
       ${bgColor} 
 
       border 
       px-4 
       py-4 
+      lg: min-w-[33%]
       rounded-2xl 
       hover:scale-105 
       transform 
@@ -144,7 +134,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
       overflow-hidden
     `}
   >
-    <div 
+    <div
       className={`
         absolute 
         top-0 
@@ -156,18 +146,24 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
         -z-10
       `}
     />
-    
+
     <div className="absolute top-2 right-4">
       <Icon className={`${iconColor} w-6 h-6 opacity-70`} />
     </div>
-    
+
     <div>
-      <div className="text-base font-semibold text-gray-800 mb-2">{heading}</div>
+      <div className="text-base font-semibold text-gray-800 mb-2">
+        {heading}
+      </div>
       <div className="flex justify-between items-center">
-        <div className={`font-bold ${heading === "Total Users" ? "text-xl" : "text-2xl"} text-gray-900`}>
+        <div
+          className={`font-bold ${
+            heading === "Total Users" ? "text-xl" : "text-2xl"
+          } text-gray-900`}
+        >
           {users}
         </div>
-        <div 
+        <div
           className="
             border 
             rounded-full 
@@ -184,7 +180,6 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
         </div>
       </div>
     </div>
-   
   </div>
 );
 
@@ -198,22 +193,17 @@ const Dashboard = () => {
           </h1>
           <p className="text-gray-500">
             Overview of your application's performance
-            </p>
+          </p>
         </div>
-        
+
         <div className="flex flex-col md:flex-row md:justify-around gap-6 z-0 lg:w-full">
           {Header.map((val) => (
-            <DashboardCard 
-              key={val.heading}
-              {...val}
-            />
+            <DashboardCard key={val.heading} {...val} />
           ))}
         </div>
-        <div className='mt-9'>
-
-        </div>
-        <div className='w-72'>
-        <Storageadmin />
+        <div className="mt-9"></div>
+        <div className="w-72">
+          <Storageadmin />
         </div>
       </div>
     </div>
