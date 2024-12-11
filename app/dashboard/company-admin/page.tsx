@@ -38,8 +38,8 @@ const Header = [
     users: "24.7%",
     growth: "+15.3%",
     icon: TrendingUp,
-    bgColor: "bg-purple-50",
-    iconColor: "text-purple-500",
+    bgColor: "bg-green-50",
+    iconColor: "text-green-500",
     size: "md:col-span-2", // This will make this card larger
   },
 ];
@@ -66,7 +66,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
       border 
       px-4 
       py-4 
-      lg: min-w-[31%]
+      lg: min-w-[22%]
       rounded-2xl 
       hover:scale-105 
       transform 
