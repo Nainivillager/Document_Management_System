@@ -27,17 +27,16 @@ export default function FileUploader() {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-        onUploadProgress: (ProgressEvent) =>{
-          const progress = ProgressEvent.total ? 
-          Math.round((ProgressEvent.loaded * 100) / ProgressEvent.total)
-          : 0;
+        onUploadProgress: (ProgressEvent) => {
+          const progress = ProgressEvent.total
+            ? Math.round((ProgressEvent.loaded * 100) / ProgressEvent.total)
+            : 0;
 
           setUploadProgress(progress);
-        }
+        },
       });
       setStatus("success");
       setUploadProgress(100);
-
     } catch {
       setStatus("error");
       setUploadProgress(0);
@@ -47,7 +46,9 @@ export default function FileUploader() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-6 w-96">
-        <h2 className="text-xl font-semibold mb-4 text-center">File Uploader</h2>
+        <h2 className="text-xl font-semibold mb-4 text-center">
+          File Uploader
+        </h2>
         <input
           type="file"
           onChange={handleFileChange}
@@ -55,19 +56,29 @@ export default function FileUploader() {
         />
         {file && (
           <div className="mb-4 text-sm text-gray-700">
-            <p><strong>File Name:</strong> {file.name}</p>
-            <p><strong>Size:</strong> {(file.size / 1024).toFixed(2)} KB</p>
-            <p><strong>Type:</strong> {file.type}</p>
-            <p><strong>Selected:</strong> {new Date(file.lastModified).toLocaleString()}</p>
+            <p>
+              <strong>File Name:</strong> {file.name}
+            </p>
+            <p>
+              <strong>Size:</strong> {(file.size / 1024).toFixed(2)} KB
+            </p>
+            <p>
+              <strong>Type:</strong> {file.type}
+            </p>
+            <p>
+              <strong>Selected:</strong>{" "}
+              {new Date(file.lastModified).toLocaleString()}
+            </p>
           </div>
         )}
 
-        {status === 'uploading' && (
+        {status === "uploading" && (
           <div className="space-y-2">
             <div className="h-2.5 w-full founded-full bg-gray-200">
               <div
-                className="h-2.5 rounded-full bg-blue-600 transition-all duration-300" style={{width: `${uploadProgress}%`}}>
-              </div>
+                className="h-2.5 rounded-full bg-blue-600 transition-all duration-300"
+                style={{ width: `${uploadProgress}%` }}
+              ></div>
             </div>
             <p className="text-sm text-gray-600"> {uploadProgress}% uploaded</p>
           </div>
@@ -86,7 +97,9 @@ export default function FileUploader() {
         )} */}
 
         {status === "success" && (
-          <p className="text-sm text-green-600 text-center">File Uploaded Successfully!</p>
+          <p className="text-sm text-green-600 text-center">
+            File Uploaded Successfully!
+          </p>
         )}
 
         {status === "error" && (
