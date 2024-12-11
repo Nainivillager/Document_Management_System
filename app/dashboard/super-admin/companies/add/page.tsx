@@ -1,42 +1,42 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 export default function page() {
   const [companyData, setCompanyData] = useState({
-    gstNumber: '',
-    companyName: '',
-    email: '',
-    phoneNumber: '',
-    panNumber: '',
-    companyAddress: ''
+    gstNumber: "",
+    companyName: "",
+    email: "",
+    phoneNumber: "",
+    panNumber: "",
+    companyAddress: "",
   });
 
   // Function to handle input change
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setCompanyData({ ...companyData, [name]: value });
   };
 
   // Mock fetch function to simulate auto-filling the data based on GST number
-//   const fetchCompanyData = async (gstNumber) => {
-//     // Simulate an API call
-//     if (gstNumber === '1234567890') {
-//       setCompanyData({
-//         gstNumber,
-//         companyName: 'Example Company',
-//         email: 'contact@example.com',
-//         phoneNumber: '9876543210',
-//         panNumber: 'ABCDE1234F',
-//         companyAddress: '123 Example St, City, State'
-//       });
-//     }
-//   };
+  //   const fetchCompanyData = async (gstNumber) => {
+  //     // Simulate an API call
+  //     if (gstNumber === '1234567890') {
+  //       setCompanyData({
+  //         gstNumber,
+  //         companyName: 'Example Company',
+  //         email: 'contact@example.com',
+  //         phoneNumber: '9876543210',
+  //         panNumber: 'ABCDE1234F',
+  //         companyAddress: '123 Example St, City, State'
+  //       });
+  //     }
+  //   };
 
   // Handle form submission
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     // Process form data
-    console.log('Company Data:', companyData);
+    console.log("Company Data:", companyData);
   };
 
   return (
@@ -44,7 +44,12 @@ export default function page() {
       <h2 className="text-2xl font-bold text-center mb-6">ADD New Company</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="gstNumber" className="block text-sm font-medium text-gray-700">GSTIN Number</label>
+          <label
+            htmlFor="gstNumber"
+            className="block text-sm font-medium text-gray-700"
+          >
+            GSTIN Number
+          </label>
           <input
             type="text"
             id="gstNumber"
@@ -56,9 +61,14 @@ export default function page() {
             placeholder="Enter GST number"
           />
         </div>
-        
+
         <div className="mb-4">
-          <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">Company Name</label>
+          <label
+            htmlFor="companyName"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Company Name
+          </label>
           <input
             type="text"
             id="companyName"
@@ -71,7 +81,12 @@ export default function page() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail</label>
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700"
+          >
+            E-mail
+          </label>
           <input
             type="email"
             id="email"
@@ -84,7 +99,12 @@ export default function page() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
+          <label
+            htmlFor="phoneNumber"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Phone Number
+          </label>
           <input
             type="text"
             id="phoneNumber"
@@ -97,7 +117,12 @@ export default function page() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="panNumber" className="block text-sm font-medium text-gray-700">PAN Number</label>
+          <label
+            htmlFor="panNumber"
+            className="block text-sm font-medium text-gray-700"
+          >
+            PAN Number
+          </label>
           <input
             type="text"
             id="panNumber"
@@ -110,7 +135,12 @@ export default function page() {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="companyAddress" className="block text-sm font-medium text-gray-700">Company Address</label>
+          <label
+            htmlFor="companyAddress"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Company Address
+          </label>
           <input
             type="text"
             id="companyAddress"
