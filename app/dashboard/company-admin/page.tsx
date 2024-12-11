@@ -61,12 +61,13 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
 }) => (
   <div
     className={`
-      ${bgColor} 
+      ${bgColor} flex
+      flex-wrap
 
       border 
-      px-4 
+      px-4
       py-4 
-      lg: min-w-[31%]
+     w-[25%]
       rounded-2xl 
       hover:scale-105 
       transform 
