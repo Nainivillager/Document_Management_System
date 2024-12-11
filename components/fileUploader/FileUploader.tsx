@@ -92,10 +92,6 @@ export default function FileUploader() {
           </button>
         )}
 
-        {/* {status === "uploading" && (
-          <p className="text-sm text-blue-600 text-center">Uploading...</p>
-        )} */}
-
         {status === "success" && (
           <p className="text-sm text-green-600 text-center">
             File Uploaded Successfully!
