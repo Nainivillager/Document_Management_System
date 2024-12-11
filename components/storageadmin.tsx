@@ -81,7 +81,7 @@ export function Storageadmin() {
                           y={(viewBox.cy || 0) + 24}
                           className="fill-muted-foreground"
                         >
-                          TB'S of Storage Allocated
+                          TB&apos;S of Storage Allocated
                         </tspan>
                       </text>
                     )
