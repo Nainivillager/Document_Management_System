@@ -121,7 +121,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
       border 
       px-4 
       py-4 
-      lg: min-w-[33%]
+      lg: min-w-[31%]
       rounded-2xl 
       hover:scale-105 
       transform 

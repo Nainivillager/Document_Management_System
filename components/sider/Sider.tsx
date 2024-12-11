@@ -96,7 +96,7 @@ const Sidebar: React.FC = () => {
           onClick={toggleSidebar}
           className="
             p-2 rounded-full 
-            hover:bg-gray-100 
+            hover:bg-gray-100 lg:hidden
             transition-colors 
             duration-300
             absolute right-2
