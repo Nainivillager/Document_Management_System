@@ -132,7 +132,8 @@ const Dashboard = () => {
             Performance Dashboard
           </h1>
           <p className="text-gray-500">
-            Overview of your application's performance
+          Overview of your application&apos;s performance
+
           </p>
         </div>
 

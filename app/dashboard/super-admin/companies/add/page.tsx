@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-export default function page() {
+export default function Page() {
   const [companyData, setCompanyData] = useState({
     gstNumber: '',
     companyName: '',
@@ -12,7 +12,7 @@ export default function page() {
   });
 
   // Function to handle input change
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setCompanyData({ ...companyData, [name]: value });
   };
@@ -33,7 +33,7 @@ export default function page() {
 //   };
 
   // Handle form submission
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Process form data
     console.log('Company Data:', companyData);

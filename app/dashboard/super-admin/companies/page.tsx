@@ -31,12 +31,11 @@ const companies: Company[] = [
   // Add more dummy data as needed
 ];
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const router = useRouter();
 
   const handleOverviewClick = (companyId: string) => {
-    // router.push(`/companies/${companyId}/overview`);
-    router.push(`./companies/overview`)
+    router.push(`/companies/${companyId}/overview`);
   };
 
   const handleAddCompanyClick = () => {
@@ -107,7 +106,9 @@ const page: React.FC = () => {
                     <td className="py-3 px-6 border-b">{company.totalUsers}</td>
                     <td className="py-3 px-6 border-b">
                       <button
-                        onClick={() => handleOverviewClick(company.companyId)}
+                        onClick={() =>
+                          handleOverviewClick(company.companyId)
+                        }
                         className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
                       >
                         View Overview
@@ -124,4 +125,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;
