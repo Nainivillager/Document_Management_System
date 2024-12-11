@@ -6,14 +6,19 @@ export default function Home() {
       <h1>Project Started Succesfully</h1>
       <h1>Click to Navigate</h1>
       <div>
-        <button className="border border-red-800">
+        <button className="border border-red-800 rounded-lg">
           <Link href="/dashboard/super-admin">
-            <h2>Admin Dashboard</h2>
+            <h2>Admin </h2>
           </Link>
         </button>
-        <button className="border border-red-800">
+        <button className="border border-red-800 ml-4 rounded-lg">
+          <Link href="/dashboard/company-admin">
+            <h2>Company Admin </h2>
+          </Link>
+        </button>
+        <button className="border border-red-800 ml-4 rounded-lg">
           <Link href="/dashboard/employee">
-            <h2>Employee Dashboard</h2>
+            <h2>Employee </h2>
           </Link>
         </button>
       </div>
