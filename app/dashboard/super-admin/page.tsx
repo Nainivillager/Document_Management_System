@@ -93,9 +93,8 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
       </div>
       <div className="flex justify-between items-center">
         <div
-          className={`font-bold ${
-            heading === "Total Users" ? "text-xl" : "text-2xl"
-          } text-gray-900`}
+          className={`font-bold ${heading === "Total Users" ? "text-xl" : "text-2xl"
+            } text-gray-900`}
         >
           {users}
         </div>
@@ -118,9 +117,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
     </div>
   </div>
 );
-{
-  /* <Sidebar /> */
-}
+
 const Dashboard = () => {
   return (
     <div className="min-w-full px-4 md:px-6 bg-gradient-to-r from-blue-50 to-white py-8">
@@ -132,7 +129,7 @@ const Dashboard = () => {
             Performance Dashboard
           </h1>
           <p className="text-gray-500">
-          Overview of your application&apos;s performance
+            Overview of your application&apos;s performance
 
           </p>
         </div>
