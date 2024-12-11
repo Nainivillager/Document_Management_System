@@ -17,7 +17,7 @@ const Sidebar: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const sidebarItems = [
-    { name: "Dashboard", path: "/dashboard", icon: <FiHome /> },
+    { name: "Dashboard", path: "/dashboard/super-admin", icon: <FiHome /> },
     {
       name: "Billing Information",
       path: "/dashboard/super-admin/billing",
@@ -55,26 +55,27 @@ const Sidebar: React.FC = () => {
   }, []);
 
   const linkClasses = (path: string) => {
-    const baseClasses = "group relative flex items-center px-4 py-2 rounded-l-xl transition-all duration-300 ease-in-out";
-    
+    const baseClasses =
+      "group relative flex items-center px-4 py-2 rounded-l-xl transition-all duration-300 ease-in-out";
+
     if (pathname === path) {
       return `${baseClasses} bg-blue-600 text-white shadow-md`;
     }
-    
+
     return `${baseClasses} hover:bg-gray-100 text-gray-700`;
   };
 
   return (
-    <div 
+    <div
       className={`
         fixed top-0 left-0 h-screen bg-white shadow-lg 
         transition-all duration-500 ease-in-out
         flex flex-col border-r border-gray-100 z-10 
-        ${isSidebarOpen ? 'w-56' : 'w-16'}
+        ${isSidebarOpen ? "w-56" : "w-16"}
       `}
     >
       {/* Header */}
-      <div 
+      <div
         className="
           flex items-center justify-center 
           h-16 px-4 py-2 
@@ -91,8 +92,8 @@ const Sidebar: React.FC = () => {
             </div>
           )}
         </div>
-        
-        <button 
+
+        <button
           onClick={toggleSidebar}
           className="
             p-2 rounded-full 
@@ -117,24 +118,28 @@ const Sidebar: React.FC = () => {
                 className={linkClasses(item.path)}
                 aria-label={`Navigate to ${item.name}`}
               >
-                <span 
+                <span
                   className={`
                     text-xl mr-4 
-                    ${pathname === item.path 
-                      ? 'text-white' 
-                      : 'text-gray-500 group-hover:text-blue-600'}
+                    ${
+                      pathname === item.path
+                        ? "text-white"
+                        : "text-gray-500 group-hover:text-blue-600"
+                    }
                     transition-colors duration-300
                   `}
                 >
                   {item.icon}
                 </span>
                 {isSidebarOpen && (
-                  <span 
+                  <span
                     className={`
                       text-sm font-medium 
-                      ${pathname === item.path 
-                        ? 'text-white' 
-                        : 'text-gray-700 group-hover:text-blue-600'}
+                      ${
+                        pathname === item.path
+                          ? "text-white"
+                          : "text-gray-700 group-hover:text-blue-600"
+                      }
                       transition-colors duration-300
                     `}
                   >
@@ -142,7 +147,7 @@ const Sidebar: React.FC = () => {
                   </span>
                 )}
                 {pathname === item.path && isSidebarOpen && (
-                  <span 
+                  <span
                     className="
                       absolute right-0 
                       w-1 h-8 
