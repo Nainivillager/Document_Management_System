@@ -7,8 +7,8 @@ import Sidebar from "@/components/sider/Sider";
 
 const Header = [
   {
-    heading: "Total Users",
-    users: "12,345",
+    heading: "Total Employees",
+    users: "12000",
     growth: "+12.5%",
     icon: Users,
     bgColor: "bg-blue-50",
@@ -16,7 +16,7 @@ const Header = [
     // This will make this card smaller
   },
   {
-    heading: "Active Users",
+    heading: "New Employees",
     users: "8,762",
     growth: "+8.2%",
     icon: Activity,
@@ -25,7 +25,16 @@ const Header = [
     size: "md:col-span-2", // This will make this card larger
   },
   {
-    heading: "Growth Rate",
+    heading: "Active employees",
+    users: "24.7%",
+    growth: "+15.3%",
+    icon: TrendingUp,
+    bgColor: "bg-purple-50",
+    iconColor: "text-purple-500",
+    size: "md:col-span-2", // This will make this card larger
+  },
+  {
+    heading: "Pending invites",
     users: "24.7%",
     growth: "+15.3%",
     icon: TrendingUp,
