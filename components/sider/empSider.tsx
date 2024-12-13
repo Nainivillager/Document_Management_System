@@ -2,13 +2,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IconSteam ,IconUsersGroup} from '@tabler/icons-react';
 import {
   FiHome,
   FiFile,
   FiUploadCloud,
   FiStar,
   FiChevronLeft,
-  FiChevronRight
+  FiChevronRight,
 } from "react-icons/fi";
 
 const EmpSidebar: React.FC = () => {
@@ -27,6 +28,11 @@ const EmpSidebar: React.FC = () => {
       name: "Upload Documents",
       path: "/dashboard/employee/uploadDocs",
       icon: <FiUploadCloud />, // Changed from FiUsers to FiUploadCloud
+    },
+    {
+      name: "Team Documents",
+      path: "/dashboard/employee/teamdocs",
+      icon: <IconUsersGroup/>, // Changed from FiUsers to FiUploadCloud
     },
     {
       name: "Favourite",

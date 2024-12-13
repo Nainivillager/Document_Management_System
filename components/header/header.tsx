@@ -41,10 +41,10 @@ const Header: React.FC = () => {
       <div className="relative" ref={dropdownRef}>
         <FiUser
           onClick={toggleDropdown}
-          className="text-xl cursor-pointer hover:text-blue-300 transition-all duration-300 ease-in-out"
+          className="text-xl cursor-pointer  hover:text-blue-300 transition-all duration-300 ease-in-out"
         />
         {isDropdownOpen && (
-          <div className="absolute right-0 mt-2 w-48  text-black rounded-lg shadow-lg z-10">
+          <div className="absolute bg-white right-0 mt-2 w-48  text-black rounded-lg shadow-lg z-10">
             <a
               href="#"
               className="block px-4 py-2 hover:bg-gray-300 transition-colors duration-200"

@@ -153,7 +153,7 @@ export default function page() {
   return (
     <>
     <div>page</div>
-    <Link href="/dashboard/super-admin">sup-adm</Link>
+    {/* <Link href="/dashboard/super-admin">sup-adm</Link> */}
   </>)
 }
 

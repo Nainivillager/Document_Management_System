@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-
+import { FaEdit } from 'react-icons/fa';
 interface Company {
   companyId: string;
   companyName: string;
@@ -109,9 +109,9 @@ const Page: React.FC = () => {
                         onClick={() =>
                           handleOverviewClick(company.companyId)
                         }
-                        className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+                        className="py-2 px-4  hover:bg-grey-200 transition duration-300"
                       >
-                        View Overview
+                         <FaEdit size={18} />
                       </button>
                     </td>
                   </tr>

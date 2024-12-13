@@ -3,7 +3,7 @@
 import React from "react";
 import { TrendingUp, Users, Activity } from "lucide-react";
 import { Storageadmin } from "@/components/storageadmin";
-import Sidebar from "@/components/sider/Sider";
+// import Sidebar from "@/components/sider/Sider";
 
 const Header = [
   {
@@ -131,7 +131,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
 const Dashboard = () => {
   return (
     <div className="min-w-full px-4 md:px-6 bg-gradient-to-r from-blue-50 to-white py-8">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="container mx-auto">
         <div className="text-center mb-8">
           {/* <Sidebar /> */}

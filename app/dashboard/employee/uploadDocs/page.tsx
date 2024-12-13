@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
 import FileUploader from "@/components/fileUploader/FileUploader";
-
+import { Card } from "@/components/ui/card";
 export default function page() {
   return (
-    <div>
+    <>
+      <Card className="">
       <FileUploader />
-    </div>
+      </Card>
+    </>
   );
 }
